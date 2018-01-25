@@ -1,0 +1,6 @@
+c:\users\sumanth.akkala\documents\visual studio 2015\Projects\Git Cloner\Git Cloner\bin\Debug\Git Cloner.exe.config
+c:\users\sumanth.akkala\documents\visual studio 2015\Projects\Git Cloner\Git Cloner\bin\Debug\Git Cloner.exe
+c:\users\sumanth.akkala\documents\visual studio 2015\Projects\Git Cloner\Git Cloner\bin\Debug\Git Cloner.pdb
+c:\users\sumanth.akkala\documents\visual studio 2015\Projects\Git Cloner\Git Cloner\obj\Debug\Git Cloner.csprojResolveAssemblyReference.cache
+c:\users\sumanth.akkala\documents\visual studio 2015\Projects\Git Cloner\Git Cloner\obj\Debug\Git Cloner.exe
+c:\users\sumanth.akkala\documents\visual studio 2015\Projects\Git Cloner\Git Cloner\obj\Debug\Git Cloner.pdb
