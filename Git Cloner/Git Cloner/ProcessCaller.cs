@@ -1,18 +1,11 @@
-﻿using System;
-using System.IO;
-using System.Diagnostics;
-using System.Threading;
-using System.ComponentModel;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Diagnostics;
+
 
 namespace Git_Cloner
 {
     class ProcessCaller
     {
-        internal string gitCall(string WorkDir, string args)
+        internal string GitCall(string WorkDir, string args)
         {
             Process gitProcess = new Process();
             var processStartInfo = new System.Diagnostics.ProcessStartInfo
@@ -23,7 +16,7 @@ namespace Git_Cloner
                 RedirectStandardInput = true,
                 RedirectStandardOutput = true,
                 UseShellExecute = false,
-                Arguments = $"/c {args}"
+                Arguments = $"/c git {args}"
             };
             gitProcess.StartInfo = processStartInfo;
             gitProcess.Start();

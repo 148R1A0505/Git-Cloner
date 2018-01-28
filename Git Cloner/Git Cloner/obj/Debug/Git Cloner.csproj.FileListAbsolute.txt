@@ -13,3 +13,6 @@ C:\Users\sumanth.akkala\Desktop\New folder\Git-Cloner\Git Cloner\Git Cloner\obj\
 C:\Users\sumanth.akkala\Desktop\New folder\Git-Cloner\Git Cloner\Git Cloner\bin\Debug\Git Cloner.exe
 C:\Users\sumanth.akkala\Desktop\New folder\Git-Cloner\Git Cloner\Git Cloner\bin\Debug\Git Cloner.pdb
 C:\Users\sumanth.akkala\Desktop\New folder\Git-Cloner\Git Cloner\Git Cloner\obj\Debug\Git Cloner.csprojResolveAssemblyReference.cache
+C:\Users\karthik.kasturi\Source\Repos\Git-Cloner\Git Cloner\Git Cloner\bin\Debug\Git Cloner.exe
+C:\Users\karthik.kasturi\Source\Repos\Git-Cloner\Git Cloner\Git Cloner\bin\Debug\Git Cloner.pdb
+C:\Users\karthik.kasturi\Source\Repos\Git-Cloner\Git Cloner\Git Cloner\obj\Debug\Git Cloner.csprojResolveAssemblyReference.cache
