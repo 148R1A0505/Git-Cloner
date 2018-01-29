@@ -91,6 +91,9 @@ namespace Git_Cloner
 
             return null;
         }
+        public string Name { get { return getnamefromurl(_repourl); } }
+
+        public string WorkingDirectory { get { return _workingDir; } }
 
         public bool IsDetached
         {
@@ -104,7 +107,7 @@ namespace Git_Cloner
             }
         }
 
-        public bool IsChangedLocally(double checkTimeInMinutes)
+        public bool IsChangedLocally(double checkTimeInMinutes = 1)
         {
             return TimeChecker.DirectoryChanged(new DirectoryInfo(_workingDir), checkTimeInMinutes);
             
