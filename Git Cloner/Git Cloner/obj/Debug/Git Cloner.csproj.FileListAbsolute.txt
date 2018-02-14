@@ -7,12 +7,3 @@ c:\users\sumanth.akkala\documents\visual studio 2015\Projects\Git Cloner\Git Clo
 C:\Users\karthik.kasturi\Source\Repos\Git-Cloner\Git Cloner\Git Cloner\bin\Debug\Git Cloner.exe.config
 C:\Users\karthik.kasturi\Source\Repos\Git-Cloner\Git Cloner\Git Cloner\obj\Debug\Git Cloner.exe
 C:\Users\karthik.kasturi\Source\Repos\Git-Cloner\Git Cloner\Git Cloner\obj\Debug\Git Cloner.pdb
-C:\Users\sumanth.akkala\Desktop\New folder\Git-Cloner\Git Cloner\Git Cloner\bin\Debug\Git Cloner.exe.config
-C:\Users\sumanth.akkala\Desktop\New folder\Git-Cloner\Git Cloner\Git Cloner\obj\Debug\Git Cloner.exe
-C:\Users\sumanth.akkala\Desktop\New folder\Git-Cloner\Git Cloner\Git Cloner\obj\Debug\Git Cloner.pdb
-C:\Users\sumanth.akkala\Desktop\New folder\Git-Cloner\Git Cloner\Git Cloner\bin\Debug\Git Cloner.exe
-C:\Users\sumanth.akkala\Desktop\New folder\Git-Cloner\Git Cloner\Git Cloner\bin\Debug\Git Cloner.pdb
-C:\Users\sumanth.akkala\Desktop\New folder\Git-Cloner\Git Cloner\Git Cloner\obj\Debug\Git Cloner.csprojResolveAssemblyReference.cache
-C:\Users\karthik.kasturi\Source\Repos\Git-Cloner\Git Cloner\Git Cloner\bin\Debug\Git Cloner.exe
-C:\Users\karthik.kasturi\Source\Repos\Git-Cloner\Git Cloner\Git Cloner\bin\Debug\Git Cloner.pdb
-C:\Users\karthik.kasturi\Source\Repos\Git-Cloner\Git Cloner\Git Cloner\obj\Debug\Git Cloner.csprojResolveAssemblyReference.cache

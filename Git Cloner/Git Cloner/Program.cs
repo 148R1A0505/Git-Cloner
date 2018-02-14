@@ -1,64 +1,86 @@
 ﻿using System;
+using System.Diagnostics;
 using System.Threading;
+using System.ComponentModel;
 using System.Collections.Generic;
-
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 
 namespace Git_Cloner
 {
     class Program
     {
-        double checkTimeInMinutes;
-        public static void Main(string[] args)
+        static void Main(string[] args)
         {
-            Dictionary<string, string> repoInfos = //stores url as key and working directory as value.
-                new Dictionary<string, string>()
-                {
-                    { "https://github.com/148R1A0505/Git-Cloner.git", "" },
-                    { "https://github.com/148R1A0505/gitrepo.git", ""}
-                };
 
-            new Program() { checkTimeInMinutes = 2 }.processThread(repoInfos).Start();
+            string repourl= "http://git.dotnettech.in/sumanth.akkala.git";
+            Thread t = new Thread(LoopedFetch(repourl));
+
+            t.Start();
+
+            Console.ReadLine();
         }
-        public Thread processThread(Dictionary<string, string> repoInfos)
+
+        private static ThreadStart LoopedFetch(string repourl)
         {
+            Process fetchProcess = new Process();
+            string reponame = getnamefromurl(repourl);
+            var fetchStartInfo = new System.Diagnostics.ProcessStartInfo
+            {
+
+                WorkingDirectory = $"C:\\Users\\sumanth.akkala\\Documents\\{reponame}",
+                WindowStyle = System.Diagnostics.ProcessWindowStyle.Normal,
+                FileName = "cmd.exe",
+                RedirectStandardInput = true,
+                UseShellExecute = false,
+                Arguments = "/c git fetch"
+            };
+            fetchProcess.StartInfo = fetchStartInfo;
             while (true)
             {
-                foreach (var repoInfo in repoInfos)
+                try
                 {
-                    GitRepository repository = new GitRepository(repourl: repoInfo.Key, workingDir: repoInfo.Value);
-                    Console.WriteLine($"Working on {repository.Name}");
-                    if (repository.IsDetached 
-                        || repository.IsChangedLocally(checkTimeInMinutes) )
-                    {
-                        Console.WriteLine("Changed recently");
-                        continue;
-                    }
-                    foreach (string branch in repository.GetBranches())
-                    {
-                        Console.WriteLine($"switching to branch {branch}");
-                        string branchStatus = repository.Checkout(branch);
-                        //if (repository.IsChangedLocally(checkTimeInMinutes))
-                        //{
-                        //    Console.WriteLine("Changed recently");
-                        //    continue;
-                        //}
-                        if (branchStatus.Equals("mergeable"))
-                        {
-                            Console.WriteLine("stashing and merging");
-                            repository.StashChanges();
-                            repository.MergeOrigin();
-                        }
-                        else
-                        {
-                            Console.WriteLine($"Possible merge conflicts on {branch} branch in {repository.Name} in folder {repository.WorkingDirectory}");
-                        }
-                    }
-                    repository.Restore();
-                    Console.WriteLine($"Done updating {repository.Name}");
+                    Console.WriteLine($"Fetching {reponame}...");
+                    fetchProcess.Start();
+                    fetchProcess.WaitForExit();
+                    Console.WriteLine($"Fetched {reponame}");
                 }
-                Thread.Sleep( (int) checkTimeInMinutes * 1000 * 60);
+                catch (Win32Exception e)
+                {
+                    if (e.ErrorCode.Equals(-2147467259))
+                    {
+                        Console.WriteLine($"A repo for {repourl} is not available locally with dir name {reponame}. Cloniing...");
+                        using (var cloneProcess = new Process())
+                        {
+                            var cloneStartInfo = new System.Diagnostics.ProcessStartInfo
+                            {
+
+                                WorkingDirectory = $"C:\\Users\\sumanth.akkala\\Documents",
+                                WindowStyle = System.Diagnostics.ProcessWindowStyle.Normal,
+                                FileName = "cmd.exe",
+                                RedirectStandardInput = true,
+                                UseShellExecute = false,
+                                Arguments = $"/c git clone {repourl}"
+                            };
+                            cloneProcess.StartInfo = cloneStartInfo;
+                            cloneProcess.Start();
+                            cloneProcess.WaitForExit();
+                            Console.WriteLine($"Repo {repourl} cloned.");
+                            
+                        }
+                    }
+
+                }
+                Thread.Sleep(10000);
             }
-            
+        }
+
+        private static string getnamefromurl(string repourl)
+        {
+            string[] splitdata = repourl.Split('/');
+            var namedotgit =  splitdata[splitdata.Length - 1];
+            return namedotgit.Substring(0,namedotgit.Length-4);
         }
     }
 }
